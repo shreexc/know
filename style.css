@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+    background: #6d6d6d;
+    color: #fff;
+    padding: 5px;
+}
+
+h2{
+    text-align: center;
+}
+
+.options button {
+    margin: 10px;
+    padding: 15px;
+    font-size: 18px;
+    background: #ffffff;
+    border: 2px solid #78acb8;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.options button:hover {
+    background: #007bff;
+    color: #fff;
+}
+
