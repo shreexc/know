@@ -1,27 +1,186 @@
+/* Basic Resets & Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%); /* Blue-purple gradient background */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Header Styling */
 h1 {
-    text-align: center;
-    background: #6d6d6d;
-    color: #fff;
-    padding: 5px;
+    font-size: 3.5em;
+    margin-bottom: 0.1em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+    letter-spacing: 1px;
 }
 
-h2{
-    text-align: center;
+h5 {
+    font-size: 1.2em;
+    margin-top: 0;
+    opacity: 0.8;
 }
 
-.options button {
-    margin: 10px;
+/* Container for Chatbox */
+#container {
+    background-color: rgba(255, 255, 255, 0.15); /* Slightly transparent white background (frosted glass base) */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 500px; /* Limit max width for better readability */
+    text-align: center;
+    margin-top: 50px; /* Space from header */
+    animation: fadeIn 1s ease-out; /* Simple fade-in animation */
+    display: flex; /* Make container a flex container */
+    flex-direction: column; /* Stack children vertically */
+}
+
+/* Chat Messages Display Area */
+#chatMessages {
+    width: 100%;
+    max-height: 400px; /* Limit height and make it scrollable */
+    overflow-y: auto; /* Enable vertical scrolling */
     padding: 15px;
-    font-size: 18px;
-    background: #ffffff;
-    border: 2px solid #78acb8;
-    border-radius: 5px;
+    margin-bottom: 20px;
+    /* Removed explicit background-color and border for "engraved" look */
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    /* border-radius: 15px; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between messages */
+    text-align: left; /* Messages align left within the box */
+    /* Add subtle inner shadow for engraved effect */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 -2px 5px rgba(255, 255, 255, 0.05);
+    border-radius: 15px; /* Keep border-radius for the overall message area shape */
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 80%; /* Limit message width */
+    word-wrap: break-word; /* Break long words */
+    line-height: 1.5;
+}
+
+.bot {
+    background-color: rgba(63, 81, 181, 0.9); /* Slightly more opaque blue for bot messages */
+    align-self: flex-start; /* Align bot messages to the left */
+    color: white;
+}
+
+.user {
+    background-color: rgba(255, 255, 255, 0.9); /* Opaque white for user messages */
+    align-self: flex-end; /* Align user messages to the right */
+    color: #333; /* Darker text for light background */
+}
+
+/* Scrollbar styling for webkit browsers */
+#chatMessages::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chatMessages::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+#chatMessages::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+/* Chatbox Input and Button Styling */
+#chatbox {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between input and button */
+    margin-top: 20px;
+}
+
+#userInput {
+    width: calc(100% - 20px); /* Full width with padding considered */
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.9); /* Opaque white background */
+    color: #333;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#userInput::placeholder {
+    color: #888;
+}
+
+#userInput:focus {
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 3px rgba(255, 255, 255, 0.5); /* Focus highlight */
+}
+
+button {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
     cursor: pointer;
-    transition: 0.3s;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
 }
 
-.options button:hover {
-    background: #007bff;
-    color: #fff;
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
+button:active {
+    transform: translateY(0); /* Press effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h5 {
+        font-size: 1em;
+    }
+
+    #container {
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    #userInput {
+        padding: 12px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+}
