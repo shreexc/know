@@ -85,7 +85,7 @@ function askQuestion() {
         addMessage('bot', questionText);
     } else {
         // All questions asked, time to analyze
-        addMessage('bot', "Here is the best course for you...");
+        addMessage('bot', "Thank you for the answers...");
         analyzeAnswers();
     }
 }
@@ -141,7 +141,7 @@ function processAnswer(answer) {
 
 // --- Analysis Function (Placeholder) ---
 function analyzeAnswers() {
-    let recommendation = "Based on your answers, here are some course ideas:";
+    let recommendation = "Here are some best courses for you...";
     let scores = {
         "tech": 0,
         "arts": 0,
