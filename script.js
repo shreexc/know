@@ -211,31 +211,31 @@ function analyzeAnswers() {
     // Convert category ID to a more user-friendly name and provide specific course examples
     switch (recommendedCategory) {
         case 'tech':
-            recommendation += "\n\n**Technology & Coding:** Consider courses like Computer Science, Software Engineering, Data Science, Web Development, or Cybersecurity.";
+            recommendation += "\n\n Consider courses like Computer Science, Software Engineering, Data Science, Web Development, or Cybersecurity.";
             break;
         case 'arts':
-            recommendation += "\n\n**Arts & Crafts:** Look into courses like Graphic Design, Fine Arts, Fashion Design, Architecture, or Digital Media.";
+            recommendation += "\n\n Look into courses like Graphic Design, Fine Arts, Fashion Design, Architecture, or Digital Media.";
             break;
         case 'science':
-            recommendation += "\n\n**Science & Research:** Fields like Physics, Chemistry, Biology, Environmental Science, or Mathematics might be a great fit.";
+            recommendation += "\n\n Fields like Physics, Chemistry, Biology, Environmental Science, or Mathematics might be a great fit.";
             break;
         case 'management':
-            recommendation += "\n\n**Business & Commerce:** Explore courses such as Business Administration, Marketing, Finance, Human Resources, or Entrepreneurship.";
+            recommendation += "\n\n Explore courses such as Business Administration, Marketing, Finance, Human Resources, or Entrepreneurship.";
             break;
         case 'health':
-            recommendation += "\n\n**Health & Medical:** Consider paths like Medicine, Nursing, Pharmacy, Public Health, or Physical Therapy.";
+            recommendation += "\n\n Consider paths like Medicine, Nursing, Pharmacy, Public Health, or Physical Therapy.";
             break;
         case 'social':
-            recommendation += "\n\n**Humanity & Social Services:** Areas like Psychology, Sociology, Political Science, History, or Literature could be for you.";
+            recommendation += "\n\n Areas like Psychology, Sociology, Political Science, History, or Literature could be for you.";
             break;
         case 'teach':
-            recommendation += "\n\n**Teaching & Education:** Explore fields like B.Sc, B.Com., B.A., and study your fav. subject ";
+            recommendation += "\n\n Explore fields like B.Sc, B.Com., B.A., and study your fav. subject ";
            break; 
            case 'sports':
-            recommendation += "\n\n**Sports:** Run, play, jump. Drain your energy in the fields. You can be the next athlete and bring medals for your nation.";
+            recommendation += "\n\n Run, play, jump. Drain your energy in the fields. You can be the next athlete and bring medals for your nation.";
             break;
                case 'acting':
-            recommendation += "\n\n**Theatrical Arts:** Your interest are mostly on acting, dancing, singing, comedy, and other theatre related things. Go for it, follow your passion nobody knows what the universe have reserved for you!";
+            recommendation += "\n\n Your interest are mostly on acting, dancing, singing, comedy, and other theatre related things. Go for it, follow your passion nobody knows what the universe have reserved for you!";
             break;
      default:
     recommendation += "\n\n We wish you a bright future ahead.";
